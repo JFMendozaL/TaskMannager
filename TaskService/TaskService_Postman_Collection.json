@@ -1,0 +1,260 @@
+{
+  "info": {
+    "name": "TaskService API",
+    "description": "Colección de pruebas para TaskService",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://localhost:5001",
+      "type": "string"
+    },
+    {
+      "key": "token",
+      "value": "",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "0. Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/home",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "home"]
+        },
+        "description": "Endpoint público para verificar que el servicio está funcionando"
+      }
+    },
+    {
+      "name": "Tasks",
+      "item": [
+        {
+          "name": "1. Crear Tarea",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Tarea de Prueba\",\n  \"description\": \"Esta es una tarea de prueba\",\n  \"courseId\": 1,\n  \"createdByUserId\": 1,\n  \"assignedToUserId\": 2,\n  \"priority\": 2,\n  \"dueDate\": \"2024-12-31T23:59:59\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/tasks",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "tasks"]
+            }
+          }
+        },
+        {
+          "name": "2. Obtener Todas las Tareas",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/tasks",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "tasks"]
+            }
+          }
+        },
+        {
+          "name": "3. Obtener Tarea por ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/tasks/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "tasks", "1"]
+            }
+          }
+        },
+        {
+          "name": "4. Obtener Tareas por Curso",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/tasks/course/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "tasks", "course", "1"]
+            }
+          }
+        },
+        {
+          "name": "5. Obtener Tareas Asignadas",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/tasks/assigned/2",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "tasks", "assigned", "2"]
+            }
+          }
+        },
+        {
+          "name": "6. Actualizar Tarea",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Tarea Actualizada\",\n  \"status\": 2,\n  \"grade\": 95.5,\n  \"comments\": \"Trabajo excelente\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/tasks/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "tasks", "1"]
+            }
+          }
+        },
+        {
+          "name": "7. Eliminar Tarea",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/tasks/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "tasks", "1"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Task Submissions",
+      "item": [
+        {
+          "name": "1. Crear Entrega",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"taskId\": 1,\n  \"submittedByUserId\": 2,\n  \"submissionContent\": \"Aquí está mi entrega de la tarea...\",\n  \"fileUrl\": \"https://drive.google.com/file/d/ejemplo\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/tasksubmissions",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "tasksubmissions"]
+            }
+          }
+        },
+        {
+          "name": "2. Obtener Entregas por Tarea",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/tasksubmissions/task/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "tasksubmissions", "task", "1"]
+            }
+          }
+        },
+        {
+          "name": "3. Calificar Entrega",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"grade\": 95.5,\n  \"feedback\": \"Excelente trabajo!\",\n  \"gradedByUserId\": 1\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/tasksubmissions/1/grade",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "tasksubmissions", "1", "grade"]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

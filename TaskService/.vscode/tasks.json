@@ -1,0 +1,102 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "🗄️ Configurar Base de Datos",
+            "type": "shell",
+            "command": "dotnet",
+            "args": [
+                "ef",
+                "migrations",
+                "add",
+                "InitialCreate",
+                "--project",
+                "src/TaskService.Infrastructure",
+                "--startup-project",
+                "src/TaskService.API"
+            ],
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            }
+        },
+        {
+            "label": "🚀 Aplicar Migraciones",
+            "type": "shell",
+            "command": "dotnet",
+            "args": [
+                "ef",
+                "database",
+                "update",
+                "--project",
+                "src/TaskService.Infrastructure",
+                "--startup-project",
+                "src/TaskService.API"
+            ],
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "dependsOn": ["🗄️ Configurar Base de Datos"]
+        },
+        {
+            "label": "🏃 Ejecutar Aplicación",
+            "type": "shell",
+            "command": "dotnet",
+            "args": [
+                "run",
+                "--project",
+                "src/TaskService.API"
+            ],
+            "problemMatcher": "$msCompile",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "📦 Restaurar Paquetes",
+            "type": "shell",
+            "command": "dotnet",
+            "args": [
+                "restore"
+            ],
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "always"
+            }
+        },
+        {
+            "label": "🧹 Limpiar Proyecto",
+            "type": "shell",
+            "command": "dotnet",
+            "args": [
+                "clean"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "🔨 Compilar Proyecto",
+            "type": "shell",
+            "command": "dotnet",
+            "args": [
+                "build"
+            ],
+            "problemMatcher": "$msCompile",
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            }
+        }
+    ]
+}
