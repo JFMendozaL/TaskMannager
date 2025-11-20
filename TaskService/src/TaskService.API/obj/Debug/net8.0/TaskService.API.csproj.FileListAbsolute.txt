@@ -143,3 +143,4 @@ D:\Ing. Software II\Proyecto IS\TaskService\src\TaskService.API\obj\Debug\net8.0
 D:\Ing. Software II\Proyecto IS\TaskService\src\TaskService.API\obj\Debug\net8.0\TaskService.API.pdb
 D:\Ing. Software II\Proyecto IS\TaskService\src\TaskService.API\obj\Debug\net8.0\TaskService.API.genruntimeconfig.cache
 D:\Ing. Software II\Proyecto IS\TaskService\src\TaskService.API\obj\Debug\net8.0\ref\TaskService.API.dll
+D:\Ing. Software II\Proyecto IS\TaskService\src\TaskService.API\obj\Debug\net8.0\TaskService.API.sourcelink.json

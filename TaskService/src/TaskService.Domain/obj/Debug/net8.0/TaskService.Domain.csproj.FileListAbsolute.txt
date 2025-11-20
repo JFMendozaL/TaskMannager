@@ -9,3 +9,4 @@ D:\Ing. Software II\Proyecto IS\TaskService\src\TaskService.Domain\obj\Debug\net
 D:\Ing. Software II\Proyecto IS\TaskService\src\TaskService.Domain\obj\Debug\net8.0\refint\TaskService.Domain.dll
 D:\Ing. Software II\Proyecto IS\TaskService\src\TaskService.Domain\obj\Debug\net8.0\TaskService.Domain.pdb
 D:\Ing. Software II\Proyecto IS\TaskService\src\TaskService.Domain\obj\Debug\net8.0\ref\TaskService.Domain.dll
+D:\Ing. Software II\Proyecto IS\TaskService\src\TaskService.Domain\obj\Debug\net8.0\TaskService.Domain.sourcelink.json

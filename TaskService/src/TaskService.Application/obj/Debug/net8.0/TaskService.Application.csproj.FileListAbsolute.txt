@@ -13,3 +13,4 @@ D:\Ing. Software II\Proyecto IS\TaskService\src\TaskService.Application\obj\Debu
 D:\Ing. Software II\Proyecto IS\TaskService\src\TaskService.Application\obj\Debug\net8.0\refint\TaskService.Application.dll
 D:\Ing. Software II\Proyecto IS\TaskService\src\TaskService.Application\obj\Debug\net8.0\TaskService.Application.pdb
 D:\Ing. Software II\Proyecto IS\TaskService\src\TaskService.Application\obj\Debug\net8.0\ref\TaskService.Application.dll
+D:\Ing. Software II\Proyecto IS\TaskService\src\TaskService.Application\obj\Debug\net8.0\TaskService.Application.sourcelink.json

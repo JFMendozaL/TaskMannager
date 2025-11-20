@@ -15,3 +15,4 @@ D:\Ing. Software II\Proyecto IS\TaskService\src\TaskService.Infrastructure\obj\D
 D:\Ing. Software II\Proyecto IS\TaskService\src\TaskService.Infrastructure\obj\Debug\net8.0\TaskService.Infrastructure.pdb
 D:\Ing. Software II\Proyecto IS\TaskService\src\TaskService.Infrastructure\obj\Debug\net8.0\TaskService.Infrastructure.genruntimeconfig.cache
 D:\Ing. Software II\Proyecto IS\TaskService\src\TaskService.Infrastructure\obj\Debug\net8.0\ref\TaskService.Infrastructure.dll
+D:\Ing. Software II\Proyecto IS\TaskService\src\TaskService.Infrastructure\obj\Debug\net8.0\TaskService.Infrastructure.sourcelink.json
