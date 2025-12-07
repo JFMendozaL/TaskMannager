@@ -68,6 +68,7 @@ const Navbar = () => {
             Grupos
           </Link>
 
+         
           <Link
             to="/notes"
             style={{

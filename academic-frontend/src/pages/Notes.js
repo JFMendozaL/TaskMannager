@@ -15,14 +15,9 @@ const Notes = () => {
 
   const handleAddRow = () => {
     if (notes.length >= MAX_CLASSES) return;
-
     setNotes((prev) => [
       ...prev,
-      {
-        id: Date.now(),
-        subject: `Clase ${prev.length + 1}`,
-        note: "",
-      },
+      { id: Date.now(), subject: `Clase ${prev.length + 1}`, note: "" },
     ]);
   };
 
@@ -31,11 +26,9 @@ const Notes = () => {
   };
 
   const parseNote = (n) => {
-    const value = parseFloat(n);
-    if (isNaN(value)) return 0;
-    // aquí puedes decidir si tu nota es de 0 a 5, 0 a 10 o 0 a 100
-    // por ahora asumimos 0–100
-    return Math.min(Math.max(value, 0), 100);
+    const v = parseFloat(n);
+    if (isNaN(v)) return 0;
+    return Math.min(Math.max(v, 0), 100); // 0–100
   };
 
   const average =
@@ -51,7 +44,6 @@ const Notes = () => {
         resumen visual.
       </p>
 
-      {/* Resumen */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
         <div className="bg-white rounded-xl shadow p-4">
           <h2 className="text-sm font-semibold text-gray-500">Total de clases</h2>
@@ -60,24 +52,18 @@ const Notes = () => {
 
         <div className="bg-white rounded-xl shadow p-4">
           <h2 className="text-sm font-semibold text-gray-500">Promedio</h2>
-          <p className="text-3xl font-bold mt-2">
-            {average.toFixed(1)}
-          </p>
+          <p className="text-3xl font-bold mt-2">{average.toFixed(1)}</p>
           <p className="text-xs text-gray-400 mt-1">(escala 0 – 100)</p>
         </div>
 
         <div className="bg-white rounded-xl shadow p-4">
-          <h2 className="text-sm font-semibold text-gray-500">Clases restantes</h2>
-          <p className="text-3xl font-bold mt-2">
-            {MAX_CLASSES - notes.length}
-          </p>
-          <p className="text-xs text-gray-400 mt-1">
-            Puedes registrar hasta {MAX_CLASSES} clases.
-          </p>
+          <h2 className="text-sm font-semibold text-gray-500">
+            Clases restantes
+          </h2>
+          <p className="text-3xl font-bold mt-2">{MAX_CLASSES - notes.length}</p>
         </div>
       </div>
 
-      {/* Tabla de notas */}
       <div className="bg-white rounded-xl shadow p-4 mb-4">
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-lg font-semibold">Listado de notas</h2>
@@ -167,9 +153,7 @@ const Notes = () => {
       </div>
 
       <p className="text-xs text-gray-400">
-        * Por ahora estas notas se guardan solo en memoria del navegador (si
-        recargas la página se reinician). Si luego quieres, hacemos un API para
-        guardarlas en la base de datos.
+        * Por ahora estas notas se guardan solo en memoria del navegador.
       </p>
     </div>
   );
